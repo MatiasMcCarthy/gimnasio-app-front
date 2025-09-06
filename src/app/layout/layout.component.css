@@ -40,6 +40,7 @@ ul li a:hover{
   overflow-y: auto; /* scroll solo acá */
   padding: 1rem;
   box-sizing: border-box;
+  margin-top: 2rem;
   
 }
 

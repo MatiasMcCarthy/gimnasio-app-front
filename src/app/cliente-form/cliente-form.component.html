@@ -26,13 +26,45 @@
       <label>Dirección</label>
       <input type="text" formControlName="direccion" />
     </div>
-    
 
+    <div>
+      <label>Tipo de Membresía</label>
+      <select formControlName="tipoMembresia" class="modern-select">
+        <option [ngValue]="" disabled>Selecciona un tipo</option>
+        <option value="Mensual">Mensual</option>
+        <option value="Trimestral">Trimestral</option>
+        <option value="Anual">Anual</option>
+      </select>
+    </div>
 
-    <button type="submit" [disabled]="clienteForm.invalid">
-      {{ editMode ? 'Actualizar' : 'Crear' }}
-    </button>
-    <button type="button" (click)="cancelar()">Cancelar</button>
+    <div>
+      <label>Imagen (Opcional)</label>
+      <input
+        type="file"
+        id="imagenInput"
+        (change)="onFileSelected($event)"
+        hidden
+      />
+      <button
+        type="button"
+        class="btn-file"
+        onclick="document.getElementById('imagenInput').click()"
+      >
+        Seleccionar archivo
+      </button>
+      <span *ngIf="imagenSeleccionada; else noFile">
+        {{ imagenSeleccionada.name }}
+      </span>
+      <ng-template #noFile>
+        <span>No se ha seleccionado ningún archivo.</span>
+      </ng-template>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-primary" type="submit" [disabled]="clienteForm.invalid">
+        {{ editMode ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button class="btn btn-secondary" type="button" (click)="cancelar()">Cancelar</button>
+    </div>
   </form>
 </div>
-

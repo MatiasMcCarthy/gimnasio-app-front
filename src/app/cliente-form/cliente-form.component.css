@@ -1,68 +1,107 @@
-
 .form-container {
   background: black;
   color: white;
   padding: 1rem;
   border-radius: 12px;
   max-width: 500px;
-  margin: auto;
+  margin: 1rem auto; /* baja el form para que no tape header */
+  box-sizing: border-box;
 }
-.form-title{
-text-align: center;
+
+.form-title {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: red;
 }
 
 label {
   display: block;
   margin-bottom: 4px;
+  font-weight: bold;
 }
 
-input {
+input,
+select {
   width: 100%;
   padding: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   border: none;
   border-radius: 10px;
+  background-color: white;
+  color: black;
 }
 
-input:hover{
-cursor: pointer;
-box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
-transform: translate(-1px, -1px);
+input:hover,
+select:hover {
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+  transform: translate(-1px, -1px);
 }
 
-button {
-  margin-right: 10px;
+.btn-file {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Estilos de la clase base para todos los botones */
+.btn {
+  min-width: 120px;
+  text-align: center;
   padding: 8px 16px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 10px;
+  color: white; /* 👈 Color de texto base, aplicable a todos los botones */
 }
 
-button:hover{
-box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
-transform: translate(-1px, -1px);
+.btn:hover:not(:disabled) {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+  transform: translate(-1px, -1px);
 }
 
-button[type="submit"] {
-  background: red;
+/* Estilos para el botón principal (Crear/Actualizar) */
+.btn-primary {
+  background-color: red;
   color: white;
 }
 
-.form-container button[type="submit"]:disabled {
-  background-color: #94d3a2; /* Tono más claro de verde para deshabilitado */
+/* Estilos para el botón principal deshabilitado */
+.btn-primary:disabled {
+  background-color: #c94d4d; /* Un rojo más claro para indicar el estado */
   cursor: not-allowed;
-  opacity: 0.7; /* Ligeramente transparente */
-  box-shadow: none; /* Sin sombra */
-  margin-right: 10px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button[type="button"] {
-  background: gray;
+  opacity: 0.8;
   color: white;
 }
 
+/* Estilos para el botón secundario (Cancelar) */
+.btn-secondary {
+  background-color: #555;
+}
 
+/* Estilos para el botón de seleccionar archivo */
+.btn-file {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.btn-file:hover {
+  background-color: red;
+}

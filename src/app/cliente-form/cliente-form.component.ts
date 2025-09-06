@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MembresiaCardComponent } from '../membresia-card/membresia-card.component';
+
 
 
 
 @Component({
   selector: 'app-cliente-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule,MembresiaCardComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './cliente-form.component.html',
   styleUrls: ['./cliente-form.component.css']
 })
@@ -28,11 +28,12 @@ export class ClienteFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.clienteForm = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      dni: ['', Validators.required],
-      telefono: ['', Validators.required],
+      nombre: ['', Validators.required, Validators.minLength(3),Validators.pattern(/^[A-Za-z\s]+$/)],
+      apellido: ['', Validators.required,Validators.minLength(3),Validators.pattern(/^[A-Za-z\s]+$/)],
+      dni: ['', Validators.required, Validators.pattern(/^\d+$/)],
+      telefono: ['', Validators.required,Validators.minLength(8),Validators.pattern(/^\d+$/)],
       direccion: ['', Validators.required],
+      tipoMembresia: ['', Validators.required],
       imagen: [null]
     });
     // Verificamos si hay un id en la ruta
@@ -57,7 +58,10 @@ export class ClienteFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.clienteForm.invalid) return;
+    if (this.clienteForm.invalid)  if (this.clienteForm.invalid) {
+        alert('El formulario es inválido. Por favor, revise los campos.');
+        return;
+    }
 
     if (this.editMode) {
       console.log('Actualizar cliente:', this.clienteForm.value);
