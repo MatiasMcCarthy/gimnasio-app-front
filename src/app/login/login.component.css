@@ -3,9 +3,11 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f2f5;
+  background-color: #d40e0e;
+  opacity: 0.75;
   font-family: Arial, sans-serif;
 }
+
 
 .login-card {
   background-color: #fff;
@@ -61,16 +63,26 @@
   border-radius: 4px;
   box-sizing: border-box; /* Para que el padding no afecte el ancho */
 }
+.form-group input:hover {
+  border-color: #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+  opacity: 0.8;
+  
+}
 
 .link-container {
   text-align: right;
   margin-bottom: 15px;
+  
 }
 
 .link-container a {
   font-size: 12px;
-  color: #007bff;
+  color: #ff006a;
   text-decoration: none;
+}
+.link-container a:hover{
+  color: #721c24;
 }
 
 .error-message {
@@ -84,10 +96,40 @@
 .login-button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #ff0022;
   color: white;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
+}
+.login-button:hover {
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+  opacity: 0.8;
+}
+/* Asegúrate de que logo-container esté centrado si quieres */
+.logo-container {
+  margin-bottom: 10px;
+  /* Si quieres que la imagen esté centrada */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-image-logo {
+  max-width: 150px; /* Ajusta el tamaño máximo de tu logo */
+  height: auto; /* Mantiene la proporción */
+  display: block; /* Elimina espacios extra que puedan aparecer con img */
+}
+
+#rol{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+#rol:hover{
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+  opacity: 0.8;
 }

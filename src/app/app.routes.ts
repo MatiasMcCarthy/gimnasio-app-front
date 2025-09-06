@@ -1,8 +1,11 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
-import { ClientesComponent } from './clientes/clientes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClienteCardsComponent } from './cliente-cards/cliente-cards.component';
+import { GestionClientesComponent } from './gestion-clientes/gestion-clientes.component';
+import { MembresiaCardComponent } from './membresia-card/membresia-card.component';
+import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 export const routes: Routes = [
   // 1. Redirigir siempre la ruta raíz ('') a '/login'
@@ -20,8 +23,12 @@ export const routes: Routes = [
       // Si el usuario ya está en el layout (por ejemplo, después de iniciar sesión)
       // y va a la ruta raíz del layout, redirigir a clientes
       { path: '', redirectTo: 'clientes', pathMatch: 'full' }, // Esta redirección solo aplica DENTRO del layout
-     { path: 'clientes', component: ClientesComponent },
-     { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      {path: 'cliente-cards', component: ClienteCardsComponent},
+      {path: 'gestion-clientes', component: GestionClientesComponent},
+      {path:'membresia-card',component:MembresiaCardComponent},
+      {path: 'cliente-form/crear',component: ClienteFormComponent},
+      {path: 'cliente-form/editar/:id',component: ClienteFormComponent}
       // Aquí irán las demás rutas protegidas que usan el layout
       // Por ejemplo: { path: 'membresias', component: MembresiasComponent },
       // { path: 'entrenadores', component: EntrenadoresComponent },

@@ -1,0 +1,68 @@
+
+.form-container {
+  background: black;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+}
+.form-title{
+text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 10px;
+}
+
+input:hover{
+cursor: pointer;
+box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+transform: translate(-1px, -1px);
+}
+
+button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover{
+box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+transform: translate(-1px, -1px);
+}
+
+button[type="submit"] {
+  background: red;
+  color: white;
+}
+
+.form-container button[type="submit"]:disabled {
+  background-color: #94d3a2; /* Tono más claro de verde para deshabilitado */
+  cursor: not-allowed;
+  opacity: 0.7; /* Ligeramente transparente */
+  box-shadow: none; /* Sin sombra */
+  margin-right: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  background: gray;
+  color: white;
+}
+
+

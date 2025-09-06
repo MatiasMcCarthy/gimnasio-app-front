@@ -1,0 +1,31 @@
+<div class="gestion-container">
+  <div class="toolbar">
+    <button (click)="crearCliente()">+ Crear</button>
+    <input [(ngModel)]="searchTerm" placeholder="Buscar" />
+  </div>
+
+  <div class="tabla-scroll-container">
+    <div class="tabla">
+      <div class="tabla-header">
+        <span>Nombre</span>
+        <span>Apellido</span>
+        <span>DNI</span>
+        <span>Teléfono</span>
+        <span>Dirección</span>
+        <span>Acción</span>
+      </div>
+
+      <div class="tabla-row" *ngFor="let cliente of clientesFiltrados">
+        <span>{{ cliente.nombre }}</span>
+        <span>{{ cliente.apellido }}</span>
+        <span>{{ cliente.dni }}</span>
+        <span>{{ cliente.telefono }}</span>
+        <span>{{ cliente.direccion }}</span>
+        <span>
+          <button (click)="modifcarCliente(1)">✏️</button>
+          <button>🗑️</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

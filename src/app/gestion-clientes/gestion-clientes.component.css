@@ -1,0 +1,78 @@
+
+
+.gestion-container {
+  padding: 1rem;
+  color: white;
+  background-color: #000; /* negro base */
+  border-radius: 12px;
+  /* Añade flexbox o grid para controlar mejor la altura interna */
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* El 100% de su contenedor padre (body) */
+  box-sizing: border-box;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+/* NUEVA CLASE PARA EL CONTENEDOR DEL SCROLL */
+.tabla-scroll-container {
+  overflow-y: auto; /* Permite el scroll vertical */
+  height: 100%; /* Ocupa el espacio restante en el contenedor flex */
+}
+
+.tabla {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tabla-header,
+.tabla-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0.5rem;
+  background-color: #111;
+  border-radius: 8px;
+}
+
+.tabla-header {
+  font-weight: bold;
+  background-color: #222;
+  position: sticky; /* Fija el header */
+  top: 0;
+  z-index: 10;
+}
+span button{
+  margin: 0.5rem;
+}
+
+/* Puedes añadir esto para los inputs y botones si no lo tienes */
+button {
+  background-color: red;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+}
+input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+input:hover {
+  opacity: 0.9;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+}
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
