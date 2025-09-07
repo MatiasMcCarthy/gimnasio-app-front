@@ -8,30 +8,34 @@ import { MembresiaCardComponent } from './membresia-card/membresia-card.componen
 import { ClienteFormComponent } from './cliente-form/cliente-form.component';
 
 export const routes: Routes = [
-  // 1. Redirigir siempre la ruta raíz ('') a '/login'
+  // Ruta raíz → redirige al login
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 
-  // 2. Definir la ruta del login
+  // Login fuera del layout
   { path: 'login', component: LoginComponent },
 
-  // 3. Definir la ruta del layout y sus hijos
+  // Todas las rutas internas usan el Layout
   {
-    path: '', // Este path vacío significa que el LayoutComponent es la base para las rutas hijas
-              // Pero SOLO si no se ha redirigido antes a 'login'
+    path: '',
     component: LayoutComponent,
     children: [
-      // Si el usuario ya está en el layout (por ejemplo, después de iniciar sesión)
-      // y va a la ruta raíz del layout, redirigir a clientes
-      { path: '', redirectTo: 'clientes', pathMatch: 'full' }, // Esta redirección solo aplica DENTRO del layout
+      // Redirigir al dashboard por defecto cuando se entra al layout
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+
       { path: 'dashboard', component: DashboardComponent },
-      {path: 'cliente-cards', component: ClienteCardsComponent},
-      {path: 'gestion-clientes', component: GestionClientesComponent},
-      {path:'membresia-card',component:MembresiaCardComponent},
-      {path: 'cliente-form/crear',component: ClienteFormComponent},
-      {path: 'cliente-form/editar/:id',component: ClienteFormComponent}
-      // Aquí irán las demás rutas protegidas que usan el layout
-      // Por ejemplo: { path: 'membresias', component: MembresiasComponent },
+      { path: 'cliente-cards', component: ClienteCardsComponent },
+      { path: 'gestion-clientes', component: GestionClientesComponent },
+      { path: 'membresia-card', component: MembresiaCardComponent },
+      { path: 'cliente-form/crear', component: ClienteFormComponent },
+      { path: 'cliente-form/editar/:id', component: ClienteFormComponent },
+
+      // 🔒 acá podés seguir agregando las demás secciones protegidas
       // { path: 'entrenadores', component: EntrenadoresComponent },
+      // { path: 'usuarios', component: UsuariosComponent },
+      // etc.
     ]
   },
+
+  // Catch-all → cualquier ruta no encontrada redirige a login
+  { path: '**', redirectTo: 'login' }
 ];

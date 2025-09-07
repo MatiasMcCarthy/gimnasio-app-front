@@ -96,9 +96,9 @@ export class LoginComponent {
 
   // Redirección según el rol
   if (user.idRol === 'admin') {
-    this.router.navigate(['/admin']);   // ejemplo de ruta para admin
+    this.router.navigate(['/gestion-clientes']);   // ejemplo de ruta para admin
   } else if (user.idRol === 'cliente') {
-    this.router.navigate(['/gestion-clientes']); // tu ruta clientes
+    this.router.navigate(['/cliente-cards']); // tu ruta clientes
   } else if (user.idRol === 'entrenador') {
     this.router.navigate(['/entrenadores']);
   }

@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TitleHeaderService } from '../core/services/title-header.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-pageTitle = 'Mi Gimnasio AppWeb';
+  pageTitle$!: Observable<string>;
+
+  constructor(private titleService: TitleHeaderService) {
+    this.pageTitle$ = this.titleService.title$; // ahora se inicializa correctamente
+  }
 }

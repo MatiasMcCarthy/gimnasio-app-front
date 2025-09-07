@@ -15,6 +15,7 @@
   padding: 0 1.5rem;
   border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.75);
 
 }
 
@@ -91,6 +92,7 @@
   text-overflow: ellipsis;
   flex: 1;
   min-width: 0;
+  
 }
 
 /* Menú de usuario */

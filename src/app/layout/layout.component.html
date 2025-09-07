@@ -1,15 +1,7 @@
 <div class="container">
  <app-header></app-header>
 
-  <aside class="sidebar">
-    <ul>
-      <li><a routerLink="/inicio" >Inicio</a></li>  
-      <li><a routerLink="/login">Clientes</a></li>
-      <li><a routerLink="/clases">Clases</a></li>
-      <li><a routerLink="/membresias">Membresias</a></li>
-
-    </ul>
-  </aside>
+  <app-sidebar class="sidebar"></app-sidebar>
 
   <main class="main">
     <router-outlet></router-outlet>
@@ -17,3 +9,16 @@
 
   <app-footer class="footer"></app-footer>
 </div>
+
+
+<!-- <div class="layout">
+  <app-sidebar></app-sidebar>
+
+  <div class="content">
+    <app-header></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer>
+  </div>
+</div> -->
