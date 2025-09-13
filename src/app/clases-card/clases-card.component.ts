@@ -11,5 +11,9 @@ import { IClase } from '../core/models/cliente.model';
 })
 export class ClasesCardComponent {
   @Input() clases: IClase[] = [];
+
+
+
+
 }
 

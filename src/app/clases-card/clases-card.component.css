@@ -1,6 +1,27 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;       /* 👈 hace que las cards salten a otra fila */
+  gap: 20px;             /* espacio entre cards */
+  justify-content: center; /* centramos las cards */
+  padding: 20px;
+  
+}
 .card {
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 1rem;
   background: #f1f8ff;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.678);
+  transform: translateY(-5px);
+  
+}
+
+h3{
+  text-align: center;
+}
+ul{
+  text-decoration: none;
 }

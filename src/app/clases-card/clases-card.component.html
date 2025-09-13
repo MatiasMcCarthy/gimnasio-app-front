@@ -1,11 +1,18 @@
-<div class="card">
-  <h3>Clases Inscripto</h3>
-  <ul>
-    @for (clase of clases; track $index) {
-      <li>
-        <strong>{{ clase.nombre }}</strong> - {{ clase.dia }} a las {{ clase.horario }}
-      </li>
-    }
-  </ul>
+<div class="container">
+   <div class="card">
+    <h3>Clases Inscripto</h3>
+      <ul>
+          @for (clase of clases; track $index) {
+            <li>
+               <strong>{{ clase.nombre }}</strong> - {{ clase.dia }} a las {{ clase.horario }}
+            </li>
+          }
+      </ul>
+    </div>
+    
+   
+  
 </div>
+
+ 
 

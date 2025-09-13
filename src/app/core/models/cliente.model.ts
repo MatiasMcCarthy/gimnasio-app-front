@@ -2,6 +2,7 @@ export interface IMembresia {
   tipo: string;
   inicio: string;
   fin: string;
+  vencimiento: string;
 }
 
 export interface IClase {

@@ -15,5 +15,28 @@ import { ClasesCardComponent } from '../clases-card/clases-card.component';
 })
 export class ClienteCardsComponent {
   @Input() cliente!: ICliente;
+
+   clientes: ICliente[] = [
+    {
+      nombre: 'Juan',
+      apellido: 'Pérez',
+      membresia: { tipo: 'Premium', vencimiento: '2025-12-31', inicio:'2025-12-31', fin:'2025-12-31' },
+      clases: [
+        { nombre: 'Yoga', dia: 'Lunes', horario: '18:00' },
+        { nombre: 'Crossfit', dia: 'Miércoles', horario: '19:00' }
+      ]
+    },
+    {
+      nombre: 'María',
+      apellido: 'Gómez',
+      membresia: { tipo: 'Básica', vencimiento: '2025-06-30',inicio:'2025-12-31', fin:'2025-12-31' },
+      clases: [
+        { nombre: 'Pilates', dia: 'Martes', horario: '17:00' }
+      ]
+    }
+  ];
+  
+
+
 }
 

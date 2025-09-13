@@ -4,19 +4,19 @@
   height: 100%;              /* ocupa el 100% del contenedor */
   display: grid;
   grid-template-rows: auto 1fr;
-  width: 70px;
+  width: 25%;
   transition: width 0.3s ease;
   overflow: hidden;          /* evita scroll */
 }
 
-.layout {
+/* .layout {
   display: grid;
   grid-template-columns: auto 1fr;
-  height: 100vh;             /* el layout controla el alto total */
-}
+  height: 100vh;       }      /* el layout controla el alto total */
+
 
 .sidebar:hover {
-  width: 220px;
+  width: 100%;
 }
 
 .sidebar ul {
@@ -37,7 +37,7 @@
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  transition: background 0.2s;
+  transition: background-color 0.2s;
 }
 
 .sidebar a:hover {

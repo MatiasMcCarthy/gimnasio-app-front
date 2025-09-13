@@ -4,8 +4,11 @@
   align-items: center;
   min-height: 100vh;
   background-color: #d40e0e;
-  opacity: 0.75;
+   /* opacity: 0.75; */
   font-family: Arial, sans-serif;
+}
+.login-register{
+ margin: 0;
 }
 
 

@@ -1,6 +1,10 @@
 <div class="form-container">
+   <div class="container-button-volver">
+    <button class="btn button-volver" (click)="cancelar()">Atras</button>
+  </div>
   <h2 class="form-title">{{ editMode ? 'Editar' : 'Crear' }}</h2>
-
+ 
+  
   <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
     <div>
       <label>Nombre</label>

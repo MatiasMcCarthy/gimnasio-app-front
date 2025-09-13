@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LayoutComponent,LoginComponent],
+  imports: [RouterOutlet],
   template: `
     <router-outlet></router-outlet>
   `,

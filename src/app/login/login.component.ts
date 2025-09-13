@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { AuthService } from '../core/services/auth.service';
+
 
 
 interface Usuario {
@@ -21,7 +22,7 @@ interface Usuario {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router, private route: ActivatedRoute) {}
   isRegister = false;
   errorMessage = '';
   currentUser: Usuario | null = null; // usuario logueado
@@ -39,7 +40,12 @@ export class LoginComponent {
     rol: 'cliente',
     fotoPerfil: ''
   };
-
+  ngOnInit() {
+    const mode = this.route.snapshot.data['mode'];
+    if (mode === 'register') {
+      this.isRegister = true;
+    }
+  }
   toggleMode(event: Event) {
     event.preventDefault();
 

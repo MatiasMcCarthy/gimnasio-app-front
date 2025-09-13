@@ -28,6 +28,7 @@ export const routes: Routes = [
       { path: 'membresia-card', component: MembresiaCardComponent },
       { path: 'cliente-form/crear', component: ClienteFormComponent },
       { path: 'cliente-form/editar/:id', component: ClienteFormComponent },
+      {path: 'usuarios', component:LoginComponent, data:{mode:'register'}}
 
       // 🔒 acá podés seguir agregando las demás secciones protegidas
       // { path: 'entrenadores', component: EntrenadoresComponent },

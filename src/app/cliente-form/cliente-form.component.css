@@ -30,6 +30,17 @@ select {
   background-color: white;
   color: black;
 }
+.container-button-volver{
+  display: flex;
+  justify-content: start;
+}
+.form-container .container-button-volver .button-volver{
+  color: #222;
+}
+.form-container .container-button-volver .button-volver:hover
+{
+   box-shadow: 0 0 15px rgba(255, 0, 0, 0.678);
+}
 
 input:hover,
 select:hover {
